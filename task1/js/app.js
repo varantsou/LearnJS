@@ -8,17 +8,17 @@ const statistics = {
 
 for (let i = 0; i < zombiesData.length; i++) {
     if (zombiesData[i] !== undefined) {
-        if (zombiesData[i] < 1 || isNaN(zombiesData[i])) {
-            statistics.dead += 1;
+        if (zombiesData[i] < 1 || typeof zombiesData[i] !== 'number') {
+            statistics.dead ++;
         } else if (zombiesData[i] >= 1 && zombiesData[i] < 11) {
-            statistics.small += 1;
+            statistics.small ++;
         } else if (zombiesData[i] >= 11 && zombiesData[i] < 21) {
-            statistics.mad += 1;
+            statistics.mad ++;
         } else if (zombiesData[i] >= 21) {
-            statistics.strong += 1;
+            statistics.strong ++;
         }
 
-        statistics.total += 1;
+        statistics.total ++;
     }
 }
 
@@ -28,21 +28,14 @@ const smallElement = document.querySelector('.small-zombies');
 const madElement = document.querySelector('.mad-zombies');
 const strongElement = document.querySelector('.strong-zombies');
 
-const printInConsole = function() {
-    console.log(totalElement.innerText, statistics.total);
-    console.log(deadElement.innerText, statistics.dead);
-    console.log(smallElement.innerText, statistics.small);
-    console.log(madElement.innerText, statistics.mad);
-    console.log(strongElement.innerText, statistics.strong);
-};
+console.log(totalElement.innerText, statistics.total);
+console.log(deadElement.innerText, statistics.dead);
+console.log(smallElement.innerText, statistics.small);
+console.log(madElement.innerText, statistics.mad);
+console.log(strongElement.innerText, statistics.strong);
 
-const changeHTMLStatistics = function() {
-    totalElement.append(statistics.total);
-    deadElement.append(statistics.dead);
-    smallElement.append(statistics.small);
-    madElement.append(statistics.mad);
-    strongElement.append(statistics.strong);
-};
-
-printInConsole();
-changeHTMLStatistics();
+totalElement.append(statistics.total);
+deadElement.append(statistics.dead);
+smallElement.append(statistics.small);
+madElement.append(statistics.mad);
+strongElement.append(statistics.strong);
