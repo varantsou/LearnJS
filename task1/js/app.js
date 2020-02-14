@@ -8,7 +8,7 @@ const statistics = {
 
 for (let i = 0; i < zombiesData.length; i++) {
     if (zombiesData[i] !== undefined) {
-        if (zombiesData[i] < 1 || typeof zombiesData[i] !== 'number') {
+        if (zombiesData[i] < 1 || +zombiesData[i] !== zombiesData[i]) {
             statistics.dead ++;
         } else if (zombiesData[i] >= 1 && zombiesData[i] < 11) {
             statistics.small ++;
