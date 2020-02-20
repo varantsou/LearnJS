@@ -1,13 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    ZOMBIE_TYPE.DEAD = 0;
+
     const zombieList = document.querySelector('.zombies');
 
-    if (Array.isArray(zombies)){
-        for (let i = 0; i < zombies.length; i++) {
-            renderZombie(zombies[i], i);
+    renderZombieList(zombies);
+
+    function renderZombieList(units) {
+        zombieList.innerHTML = '';
+
+        for (let i = 0; i < units.length; i++) {
+            renderZombie(units[i], i);
         }
     }
 
-    function renderZombie(item) {
+    function renderZombie(item, index) {
         const zombie = document.createElement('div');
 
         zombie.classList.add('zombie');
@@ -18,14 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
             zombie.classList.add('zombie--mad');
         } else if (item.type === ZOMBIE_TYPE.STRONG) {
             zombie.classList.add('zombie--strong');
+        } else if (item.type === ZOMBIE_TYPE.DEAD) {
+            zombie.classList.add('zombie--dead');
         }
 
-        zombieList.appendChild(zombie);
-
         zombie.addEventListener('click', function (event) {
-            if (!event.target.classList.contains('zombie--dead')) {
-                event.target.classList.value = 'zombie zombie--dead';
+            if (item.type !== ZOMBIE_TYPE.DEAD) {
+                zombies[index].type = 0;
+                renderZombieList(zombies);
             }
-        })
+        });
+
+        zombieList.appendChild(zombie);
     }
 });
