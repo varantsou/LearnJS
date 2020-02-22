@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
             zombie.classList.add('zombie--strong');
         }
 
-        zombie.addEventListener('click', function (event) {
-            if (!event.target.classList.contains('zombie--dead')) {
-                event.target.classList.value = 'zombie zombie--dead';
+        zombie.addEventListener('click', function () {
+            if (!zombie.classList.contains('zombie--dead')) {
+                zombie.classList.value = 'zombie zombie--dead';
             }
         });
 
