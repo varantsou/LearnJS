@@ -1,0 +1,35 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.zombies {
+    display: flex;
+}
+
+.zombie {
+    width: 120px;
+    height: 150px;
+    border: 1px solid #dedede;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin: 0 12px;
+}
+
+.zombie--strong {
+    background-image: url("../icons/zombie-strong.gif");
+}
+
+.zombie--mad {
+    background-image: url("../icons/zombie-mad.gif");
+}
+
+.zombie--small {
+    background-image: url("../icons/zombie-small.gif");
+}
+
+.zombie--dead {
+    background-image: url("../icons/zombie-dead.gif");
+    background-size: contain;
+}
