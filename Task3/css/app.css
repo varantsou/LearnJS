@@ -1,0 +1,72 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.zombie {
+    width: 120px;
+    min-height: 140px;
+    border: 1px solid #dedede;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    margin: 0 12px;
+    cursor: pointer;
+}
+
+.zombie__icon {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.zombie--strong .zombie__icon  {
+    background-image: url("../icons/zombie-strong.gif");
+    height: 146px;
+}
+
+.zombie--mad .zombie__icon  {
+    background-image: url("../icons/zombie-mad.gif");
+    height: 140px;
+}
+
+.zombie--small .zombie__icon {
+    background-image: url("../icons/zombie-small.gif");
+    height: 84px;
+}
+
+.zombie--dead .zombie__icon  {
+    background-image: url("../icons/zombie-dead.gif");
+    background-size: contain;
+}
+
+.zombies-status {
+    width: 120px;
+    text-align: center;
+}
+
+.zombie__hp {
+    position: relative;
+    width: 60px;
+    height: 6px;
+    border: 1px solid #dedede;
+    background-color: #fff;
+    margin: 10px auto;
+}
+
+.zombie__hp-status {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #488035;
+    height: 100%;
+}
+
+.game-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 150px;
+}
